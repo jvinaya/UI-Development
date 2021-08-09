@@ -30,6 +30,16 @@ import ForwardInputParent from './components/ForwardInputParent';
 import PortalDemo from './components/PortalDemo';
 import Hero from './components/Hero';
 import ErrorBoundary from './components/ErrorBoundary';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+import ClickCounterTwo from './components/ClickCounterTwo';
+import HoverCounterTwo from './components/HoverCounterTwo';
+import User from './components/User';
+import CounterTwo from './components/CounterTwo';
+import { UserProvider } from './components/userContext';
+import ComponentC from './components/ComponentC';
+import ComponentF from './components/ComponentF';
+import ComponentE from './components/ComponentE';
 class App extends Component {
   render() {
     return (
@@ -68,7 +78,7 @@ class App extends Component {
       {/* <FocusInput></FocusInput> */}
       {/* <ForwardInputParent></ForwardInputParent> */}
       {/* <PortalDemo></PortalDemo> */}
-      <ErrorBoundary>
+      {/* <ErrorBoundary>
         <Hero heroName='Batman'></Hero>
         </ErrorBoundary>
         <ErrorBoundary>
@@ -76,7 +86,20 @@ class App extends Component {
         </ErrorBoundary>
         <ErrorBoundary>
         <Hero heroName='Joker'></Hero>
-      </ErrorBoundary>
+      </ErrorBoundary> */}
+      {/* <ClickCounter name="Vinaya"></ClickCounter>
+      <HoverCounter></HoverCounter> */}
+      {/* <ClickCounterTwo></ClickCounterTwo>
+      <HoverCounterTwo></HoverCounterTwo>
+      <User render={(isLoggedIn) => isLoggedIn? 'Vinaya' : 'Guest'}></User> */}
+      {/* <CounterTwo>{(count, incrementCount) => (<ClickCounterTwo count={count} incrementCount={incrementCount}></ClickCounterTwo>)}</CounterTwo>
+      <CounterTwo>{(count, incrementCount) => (<HoverCounterTwo count={count} incrementCount={incrementCount}></HoverCounterTwo>)}</CounterTwo> */}
+
+      <UserProvider value="Vinaya">
+        <ComponentC></ComponentC>
+        <ComponentF></ComponentF>
+        <ComponentE></ComponentE>
+      </UserProvider>
       </div>
     );
   }
